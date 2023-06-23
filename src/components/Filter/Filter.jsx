@@ -13,15 +13,18 @@ const Filter = () => {
   const filter = useSelector(getFilter);
 
   return (
-    <FilterForm>
-      Find contacts by name
-      <Input
-        type="text"
-        onChange={updateFilter}
-        value={filter}
-        placeholder="Who are we looking for?"
-      />
-    </FilterForm>
+    <>
+      <h2>Contacts</h2>
+      <FilterForm>
+        Find contacts by name
+        <Input
+          type="text"
+          onChange={updateFilter}
+          value={filter}
+          placeholder="Who are we looking for?"
+        />
+      </FilterForm>
+    </>
   );
 };
 
