@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { FormWrapper, Form, AddContact, Button } from './ContactForm.style';
+import { FormWrapper, Form } from './ContactForm.style';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
 import { getContacts } from 'redux/selectors';
 import { Notify } from 'notiflix';
+import { Button, TextField } from '@mui/material';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -36,32 +37,32 @@ const ContactForm = () => {
       <h2>Phonebook</h2>
       <FormWrapper>
         <Form onSubmit={onFormSubmit}>
-          <AddContact>
-            Name
-            <input
-              value={name}
-              onChange={e => setName(e.target.value)}
-              type="text"
-              name="name"
-              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-              required
-            />
-          </AddContact>
+          <TextField
+            id="outlined-name-input"
+            label="Name"
+            type="text"
+            name="name"
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            required
+            value={name}
+            onChange={e => setName(e.target.value)}
+          />
 
-          <AddContact>
-            Number
-            <input
-              value={phone}
-              onChange={e => setPhone(e.target.value)}
-              type="tel"
-              name="phone"
-              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-              title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-              required
-            />
-          </AddContact>
-          <Button type="submit">Add contact</Button>
+          <TextField
+            id="outlined-number-input"
+            label="Number"
+            type="tel"
+            name="number"
+            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            required
+            value={phone}
+            onChange={e => setPhone(e.target.value)}
+          />
+          <Button type="submit" variant="contained" color="success">
+            Add contact
+          </Button>
         </Form>
       </FormWrapper>
     </>

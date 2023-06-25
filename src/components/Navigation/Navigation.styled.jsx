@@ -1,16 +1,5 @@
 import styled from '@emotion/styled';
-
 import { NavLink } from 'react-router-dom';
-
-export const Nav = styled.nav`
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 100px;
-  margin-bottom: 16px;
-  border-bottom: 1px solid rgba(180, 180, 180, 0.6);
-  box-shadow: 0 20px 16px -16px rgba(0, 0, 0, 0.6);
-`;
 
 export const StyledLink = styled(NavLink)`
   padding: 8px 16px;
@@ -24,8 +13,12 @@ export const StyledLink = styled(NavLink)`
   }
 `;
 
-export const SharedLayoutWrapper = styled.div`
+export const Nav = styled.nav`
   display: flex;
-  flex-direction: column;
   align-items: center;
+  gap: 12px;
+  padding: 8px 100px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(180, 180, 180, 0.6);
+  box-shadow: 0 20px 16px -16px rgba(0, 0, 0, 0.6);
 `;

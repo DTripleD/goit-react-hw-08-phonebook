@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
 import { selectUser } from 'redux/auth/selectors';
+import { MenuWrapper, UserName } from './UserMenu.styled';
+import { Button } from '@mui/material';
 
 const UserMenu = () => {
   const user = useSelector(selectUser);
@@ -13,15 +15,13 @@ const UserMenu = () => {
   };
 
   return (
-    <div>
-      <p>hello, {user.email}</p>
-      <button onClick={handleLogout}>Logout</button>
-    </div>
+    <MenuWrapper>
+      <UserName>Hello, {user.email}</UserName>
+      <Button onClick={handleLogout} variant="contained" color="error">
+        Log Out
+      </Button>
+    </MenuWrapper>
   );
 };
 
 export default UserMenu;
-
-// /register - публічний маршрут реєстрації нового користувача з формою
-// /login - публічний маршрут логіна існуючого користувача з формою
-// /contacts - приватний маршрут для роботи зі списком контактів користувача
