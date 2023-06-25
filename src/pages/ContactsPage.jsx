@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchContacts } from 'redux/operations';
 
-export const Contacts = () => {
+const ContactsPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -15,9 +15,10 @@ export const Contacts = () => {
   return (
     <>
       <ContactForm />
-
       <Filter />
       <ContactList />
     </>
   );
 };
+
+export default ContactsPage;

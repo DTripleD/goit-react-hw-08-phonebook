@@ -16,7 +16,7 @@ const UserMenu = () => {
 
   return (
     <MenuWrapper>
-      <UserName>Hello, {user.email}</UserName>
+      <UserName>Hello, {user.name}</UserName>
       <Button onClick={handleLogout} variant="contained" color="error">
         Log Out
       </Button>

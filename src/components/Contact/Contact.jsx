@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
-import { Item, Button } from './Contact.styled';
+import { Item, Button, ContactWrapper } from './Contact.styled';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Notify } from 'notiflix';
@@ -19,8 +19,10 @@ const Contact = ({ contact: { name, number, id } }) => {
 
   return (
     <>
-      <Item>{name}:</Item>
-      <Item> {number}</Item>
+      <ContactWrapper>
+        <Item>{name}:</Item>
+        <Item> {number}</Item>
+      </ContactWrapper>
       <Button type="button" onClick={handleDelete} disabled={isDeleting}>
         {isDeleting ? 'Deleting...' : 'Delete'}
       </Button>

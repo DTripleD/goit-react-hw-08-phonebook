@@ -1,6 +1,6 @@
-import { HomeWrapper } from './Home.styled';
+import { HomeWrapper } from './Pages.styled';
 
-const Home = () => {
+const HomePage = () => {
   return (
     <HomeWrapper>
       <h2>Hello!</h2>
@@ -12,4 +12,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

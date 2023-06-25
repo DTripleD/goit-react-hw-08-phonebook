@@ -2,15 +2,14 @@ import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 import AppBar from 'components/AppBar/AppBar';
 import { SharedLayoutWrapper } from './SharedLayout.styled';
+import { CircularProgress } from '@mui/material';
 
 export const SharedLayout = () => {
   return (
     <SharedLayoutWrapper>
-      <div>
-        <AppBar />
-      </div>
+      <AppBar />
 
-      <Suspense fallback="Wait...">
+      <Suspense fallback={<CircularProgress />}>
         <Outlet />
       </Suspense>
     </SharedLayoutWrapper>
