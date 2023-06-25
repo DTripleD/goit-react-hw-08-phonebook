@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Notify } from 'notiflix';
 
-const Contact = ({ contact: { name, phone, id } }) => {
+const Contact = ({ contact: { name, number, id } }) => {
   const [isDeleting, setIsDeleting] = useState(false);
   const dispatch = useDispatch();
   const handleDelete = () => {
@@ -20,7 +20,7 @@ const Contact = ({ contact: { name, phone, id } }) => {
   return (
     <>
       <Item>{name}:</Item>
-      <Item> {phone}</Item>
+      <Item> {number}</Item>
       <Button type="button" onClick={handleDelete} disabled={isDeleting}>
         {isDeleting ? 'Deleting...' : 'Delete'}
       </Button>
@@ -32,6 +32,6 @@ export default Contact;
 
 Contact.propTypes = {
   name: PropTypes.string,
-  phone: PropTypes.string,
+  number: PropTypes.string,
   id: PropTypes.string,
 };

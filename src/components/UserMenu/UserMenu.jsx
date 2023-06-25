@@ -1,5 +1,23 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { logOut } from 'redux/auth/operations';
+import { selectUser } from 'redux/auth/selectors';
+
 const UserMenu = () => {
-  return;
+  const user = useSelector(selectUser);
+
+  const dispatch = useDispatch();
+
+  const handleLogout = event => {
+    event.preventDefault();
+    dispatch(logOut());
+  };
+
+  return (
+    <div>
+      <p>hello, {user.email}</p>
+      <button onClick={handleLogout}>Logout</button>
+    </div>
+  );
 };
 
 export default UserMenu;
