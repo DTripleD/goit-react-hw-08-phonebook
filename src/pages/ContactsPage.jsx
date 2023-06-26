@@ -9,6 +9,7 @@ const ContactsPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    document.title = 'Contacts';
     dispatch(fetchContacts());
   }, [dispatch]);
 

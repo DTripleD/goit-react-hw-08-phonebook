@@ -1,6 +1,7 @@
 import { HomeWrapper } from './Pages.styled';
 
 const HomePage = () => {
+  document.title = 'Home page';
   return (
     <HomeWrapper>
       <h2>Hello!</h2>
